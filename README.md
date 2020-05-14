@@ -5,5 +5,5 @@ A simple website template for your LAN Party that integrates with LAN Launcher
 Webserver and PHP5 or newer with SQLite extension enabled
 
 ## Installation:
-Copy or rename this config.sample.php to config.php and change values
+Copy or rename config.sample.php to config.php and change values
 chmod 0755 db/*.db
