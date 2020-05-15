@@ -1,0 +1,9 @@
+<lan_servers>
+<server>
+    <name>This webserver</name>
+    <game>-</game>
+    <ip>lan</ip>
+	<port>80</port>
+    <admin>LAN Team</admin>
+</server>
+</lan_servers>
