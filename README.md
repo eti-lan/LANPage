@@ -1,4 +1,5 @@
-![Logo](https://github.com/eti-lan/LANPage/blob/master/assets/lan_page.png?raw=true) # LANPage
+![Logo](https://github.com/eti-lan/LANPage/blob/master/assets/lan_page.png?raw=true) 
+# LANPage
 A simple website template for your LAN Party that integrates with LAN Launcher
 
 ## Things required:
