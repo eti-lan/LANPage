@@ -6,6 +6,13 @@ It was developed in a very simple way so that anyone with a little knowledge can
 
 It should be possible to personalize the page for each event. In addition to the customizable logo, further features should be integrated. But lately this project is only an example implementation. Help to improve it or fork it for your own project.
 
+## Features:
+* Entry point for your LAN party event
+* Can be set up quickly and requires no maintenance
+* Designed to always work, even if it is only used once a year
+* Offer downloads for the participants
+* Show a server list (offline/online)
+* Various statistic features via the LAN Launcher
 
 ## Things required:
 * Webserver and PHP5 or newer
