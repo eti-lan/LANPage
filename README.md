@@ -4,6 +4,9 @@ A simple website template for your LAN Party that integrates with LAN Launcher.
 
 It was developed in a very simple way so that anyone with a little knowledge can customize it. A MySQL database was deliberately omitted. Everything can be configured via files. The requirements for the web server are minimal. Each feature can be switched on or off via the configuration file. Special attention is paid to the statistics function, furthermore game servers or downloads can be linked in XML format - see the sample XML files.
 
+It should be possible to personalize the page for each event. In addition to the customizable logo, further features should be integrated. But lately this project is only an example implementation. Help to improve it or fork it for your own project.
+
+
 ## Things required:
 * Webserver and PHP5 or newer
 * PHP SQLite extension enabled
