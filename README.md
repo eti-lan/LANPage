@@ -12,8 +12,8 @@ A simple website template for your LAN Party that integrates with LAN Launcher
 
 ## Screenshots:
 
-1(https://raw.githubusercontent.com/eti-lan/LANPage/master/_screenshots/1.png) 
+[1](https://raw.githubusercontent.com/eti-lan/LANPage/master/_screenshots/1.png) 
 
-3(https://raw.githubusercontent.com/eti-lan/LANPage/master/_screenshots/2.png) 
+[2](https://raw.githubusercontent.com/eti-lan/LANPage/master/_screenshots/2.png) 
 
-3(https://raw.githubusercontent.com/eti-lan/LANPage/master/_screenshots/3.png) 
+[3](https://raw.githubusercontent.com/eti-lan/LANPage/master/_screenshots/3.png) 
