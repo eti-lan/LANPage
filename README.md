@@ -16,11 +16,13 @@ It should be possible to personalize the page for each event. In addition to the
 
 ## Things required:
 * Webserver and PHP5 or newer
-* PHP SQLite extension enabled
+* PHP SQLite, mbstring and XML extension enabled
 
 ## Installation:
 - Copy or rename config.sample.php to config.php and change values
+- chown the files to match your webserver/php configured user
 - chmod 0755 db/*.db
+- See the *.sample.xml files and modify them to match your needs
 
 ## Screenshots:
 
