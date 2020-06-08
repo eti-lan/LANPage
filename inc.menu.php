@@ -3,13 +3,12 @@
 	      <br />
 		  <li class="sidebar-brand">
 	      <?php 
-			$logo = "./logo.jpg";
-			if (file_exists($logo)) { echo '<a href="'.$_SERVER['PHP_SELF'].'"><img src="logo.jpg"></a>'; };
+			if (file_exists($logo)) { echo '<a href="'.$_SERVER['PHP_SELF'].'"><img class="logo" src="'.$logo.'"></a>'; };
 		  ?>
 		  </li>
 		  
           <li class="sidebar-brand">
-              <a href="<?php $_SERVER['PHP_SELF']; ?>"><?php if (!isset($lan_title)) { echo "LAN Homepage"; } else { echo $lan_title; } ?></a>
+              <a href="<?php $_SERVER['PHP_SELF']; ?>"><?php if (!isset($lan_title) & (!file_exists($logo))) { echo "LAN Homepage"; } elseif (file_exists($logo)) {;} else { echo $lan_title; } ?></a>
           <li>
               <a href="<?php $_SERVER['PHP_SELF']; ?>#News"><?php echo $nav['news']; ?> <span
                       class="glyphicon glyphicon-asterisk"></span></a>

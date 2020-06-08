@@ -1,5 +1,6 @@
 <?php
 mb_internal_encoding("UTF-8");
+error_reporting(E_ALL ^  E_NOTICE); 
 
 if (file_exists(stream_resolve_include_path('config.php'))) {
 	include('config.php');

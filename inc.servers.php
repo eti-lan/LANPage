@@ -13,7 +13,7 @@
         <tbody>
 
             <?php
-
+			$server = "";
 			if (file_exists('servers.xml')) {
 				$sXml = file_get_contents('servers.xml');
 			} else if (file_exists('servers.sample.xml')) {

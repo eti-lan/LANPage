@@ -18,6 +18,8 @@
 $lan_title = 'LAN Party';
 $lang = 'english';
 
+$logo = "./logo.png";
+
 $enable_chat = false; /* not yet implemented */
 $enable_stats = true;
 $enable_downloads = true;

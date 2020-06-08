@@ -2,6 +2,10 @@
     overflow-x: hidden;
  }
 
+.logo {
+	max-width: 208px;
+}
+
 .table_morecondensed>tbody>tr>th, 
 .table_morecondensed>tfoot>tr>th, 
 .table_morecondensed>thead>tr>td, 
@@ -209,7 +213,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 }
 
 .sidebar-nav > .sidebar-brand {
-    height: 65px;
+    height: 75px;
     font-size: 18px;
     line-height: 60px;
 }
