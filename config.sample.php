@@ -24,7 +24,8 @@ $enable_chat = false; /* not yet implemented */
 $enable_stats = true;
 $enable_downloads = true;
 $enable_serverlist = true;
-$enable_competition = false; /* not yet implemented */
+$enable_competition = true; /* be sure that the webserver user has write access to the folder /competition/data */
+$competition_edit_password = "eti";
 
 /* Show the top X of all games */
 $stats_show_topgames = 12;
