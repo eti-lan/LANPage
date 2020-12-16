@@ -9,6 +9,9 @@
  * 
  * Copyright (c) 2020, fly
  */
+ 
+ // get $competition_edit_password
+ include_once("../config.php");
 
 if (get_magic_quotes_gpc()) {
   $process = array(&$_GET, &$_POST, &$_COOKIE, &$_REQUEST);
@@ -34,7 +37,8 @@ function pathwrap($id) { return PATH.'jqb_'.$id.'.json'; }
 
 $args = array('op' => get('op'),
               'id' => get('id'),
-              'data' => get('data'));
+              'data' => get('data'),
+			  'token' => get('token'));
 
 $error = false;
 
@@ -51,11 +55,15 @@ if (!in_array($args['op'], array_keys($restApi))) {
 if ($args['id'] !== false && !preg_match('/^'.VALID_PATTERN.'$/', $args['id'])) {
   doError("invalid id");
 }
+if ($args['op']=='delete' && $args['token'] != md5($competition_edit_password)) {
+  doError("invalid token");
+}
+
 
 function doError($reason="") {
   header('content-type: json; charset=utf-8');
   header("HTTP/1.0 404 Not Found");
-  echo 'Error '.$reason.'- Syntax is: {"api": ["?op=get&id=<name>", "?op=set&id=<name>&data=<json data>", "?op=list", "?op=delete&id=<name>"]}';
+  echo 'Error '.$reason.'- Syntax is: {"api": ["?op=get&id=<name>", "?op=set&id=<name>&data=<json data>", "?op=list", "?op=delete&id=<name>&token=<token>"]}';
   exit(0);
 }
 

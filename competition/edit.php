@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 1);
+/*ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(E_ALL);*/
 /**
  * jQuery Bracket server backend
  *
@@ -15,6 +15,7 @@ error_reporting(E_ALL);
  
  // get $competition_edit_password
  include_once("../config.php");
+ $delete_token=md5($competition_edit_password);
  
  if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('WWW-Authenticate: Basic realm="Competition Authentication"');
@@ -164,7 +165,7 @@ $(document).ready(function() {
 	$('#delete').click(function() {
 		var value = $('#bracketSelect').val();
 		//$('pre').text(jQuery.toJSON(value))
-		$.getJSON('/competition/rest.php?op=delete&id='+value).success(function() {
+		$.getJSON('/competition/rest.php?op=delete&id='+value+'&token=<?php echo($delete_token);?>').success(function() {
           refreshSelect(hash())
         })
 	})
