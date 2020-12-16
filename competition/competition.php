@@ -84,7 +84,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<h1>Competitions</h1>
+<h1 id="Competition">Competitions</h1>
 <p>Pick a Competition: <select id="bracketSelect"></select> <a href="/competition/edit.php">[Edit]</a></p>
 <div id="main">
 <div id="editor"></div>
