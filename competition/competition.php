@@ -10,9 +10,6 @@
  * Copyright (c) 2020, fly
  */
 ?>
-<html>
-<head>
-<title>Competitions</title>
 <script type="text/javascript" src="/competition/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="/competition/jquery.json-2.2.min.js"></script>
 <script type="text/javascript" src="/competition/jquery.bracket.min.js"></script>
@@ -82,13 +79,9 @@ $(document).ready(function() {
 	
   })
 </script>
-</head>
-<body>
 <h1 id="Competition">Competitions</h1>
 <p>Pick a Competition: <select id="bracketSelect"></select> <a href="/competition/edit.php">[Edit]</a></p>
 <div id="main">
 <div id="editor"></div>
 <div style="clear: both;" id="fields"></div>
 <pre></pre>
-</body>
-</html>
