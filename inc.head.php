@@ -36,7 +36,7 @@ if ($lang == "german") {
     <meta name="author" content="eti">
     <title><?php echo $lan_title; ?></title>
     <link href="assets/bootstrap.css" rel="stylesheet">
-    <link href="assets/main.css" rel="stylesheet">
+    <link href="assets/<?php echo($csstheme); ?>" rel="stylesheet">
     <!---- <script src="assets/prototype.js"></script> -->
     <script src="assets/jquery.js"></script>
     <script src="assets/jquery.ui.js"></script>

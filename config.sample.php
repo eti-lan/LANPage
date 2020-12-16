@@ -20,6 +20,9 @@ $lang = 'english';
 
 $logo = "./logo.png";
 
+$csstheme = "main.css"; // default
+//$csstheme = "main.dark.css"; // dark theme
+
 $enable_chat = false; /* not yet implemented */
 $enable_stats = true;
 $enable_downloads = true;
