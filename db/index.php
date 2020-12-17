@@ -42,8 +42,8 @@
 // 2. Change parameters directly in main phpliteadmin.php file
 //
 // Please see https://bitbucket.org/phpliteadmin/public/wiki/Configuration for more details
-
-include_once("../config.php"); # get password from global config file
+if(file_exists("../config.sample.php"))include_once("../config.sample.php"); # get password from global config file
+if(file_exists("../config.php"))include_once("../config.php"); # get password from global config file
 
 #fix language bug from global config
 if(isset($lang)) unset($lang);
