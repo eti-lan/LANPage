@@ -9,9 +9,9 @@
  * Webserver and PHP5 or newer with SQLite extension enabled
  */
 
-
 include("inc.head.php");
 ?>
+
 
 <body>
     <div id="wrapper">
@@ -43,13 +43,13 @@ include("inc.head.php");
             </div>
 
             <!-- Chat -->
-            <?php if ($enable_chat == true) { include("chat/chat.php"); }; ?>
+            <?php if ($enable_chat == true) { include("chat/chat.php"); } ?>
 
             <!-- Stats -->
-            <?php if ($enable_stats == true) { include("inc.stats.php"); }; ?>
+            <?php if ($enable_stats == true) { include("inc.stats.php"); } ?>
 
             <!-- Downloads -->
-            <?php if ($enable_downloads == true) { include("inc.dl.php"); }; ?>
+            <?php if ($enable_downloads == true) { include("inc.dl.php"); } ?>
 
             <!-- Servers -->
             <?php if ($enable_serverlist == true) { 
@@ -57,7 +57,7 @@ include("inc.head.php");
 				echo "                <div class=\"row\">\n";
 				echo "                    <div class=\"col-12 col-md-10\">\n";
 				echo "                        <div class=\"page-header\">\n";
-				echo "                            <h1 id=\"Serverlist\"> " . $nav['serverlist'] . " </h1>\n";
+				echo "                            <h1 id=\"" . $nav['serverlist'] . "\"> " . $nav['serverlist'] . " </h1>\n";
 				echo "                        </div>\n";
 				echo "                        <div id=\"serverlist\">" . $servers['checking_server'] . "</div>\n";
 				echo "                        <script type=\"text/javascript\">\n";
@@ -74,6 +74,9 @@ include("inc.head.php");
 
             <!-- Competition -->
             <?php if ($enable_competition == true) { include("competition/competition.php"); }; ?>
+			
+			<!-- FAQ -->
+            <?php if ($enable_faq == true) { include("inc.faq.php"); } ?>
 
         </div>
 </body>

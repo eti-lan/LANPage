@@ -4,12 +4,15 @@ $start['welcome2'] = 'zur';
 $start['iptext'] = 'ist deine persönliche IP-Adresse. Diese bleibt während der gesamten';
 $start['iptext2'] = ' identisch.';
 
-$nav['news'] = 'News';
+$nav['home'] = 'Home';
 $nav['chat'] = 'Chat';
 $nav['stats'] = 'Statistiken';
 $nav['downloads'] = 'Downloads';
 $nav['serverlist'] = 'Serverübersicht';
-$nav['competition'] = 'Turnier';
+$nav['competition'] = 'Turniere';
+$nav['faq'] = 'FAQ';
+
+$faq['title'] = 'FAQ';
 
 $stats['title'] = 'Statistiken';
 $stats['topgames'] = 'Top '.$stats_show_topgames.' Spiele';

@@ -2,7 +2,7 @@
                 <div class="row">
                     <div class="col-lg-10 col-md-10">
                         <div class="page-header">
-                            <h1 id="<?php echo $stats['title']; ?>"><?php echo $stats['title']; ?></h1>
+                            <h1 id="<?php echo $nav['stats']; ?>"><?php echo $stats['title']; ?></h1>
 							<h4 id="<?php echo $stats['topgames']; ?>"><?php echo $stats['topgames']; ?></h4>
                         </div>
                     </div>

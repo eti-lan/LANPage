@@ -7,6 +7,12 @@ if (file_exists(stream_resolve_include_path('config.php'))) {
 } else {
     die;
 }
+
+if($show_errors == true){
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+}
 ?>
 
 <?php
@@ -20,9 +26,9 @@ if ($lang == "german") {
 <!DOCTYPE html>
 <?php
 if ($lang == "german") {
-    echo '<html lang="en">';
-} else {
     echo '<html lang="de">';
+} else {
+    echo '<html lang="en">';
 }
 ?>
 

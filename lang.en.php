@@ -4,12 +4,15 @@ $start['welcome2'] = 'to';
 $start['iptext'] = 'is your personal IP address. This remains valid during the whole';
 $start['iptext2'] = 'event.';
 
-$nav['news'] = 'News';
+$nav['home'] = 'Home';
 $nav['chat'] = 'Chat';
 $nav['stats'] = 'Statistics';
 $nav['downloads'] = 'Downloads';
 $nav['serverlist'] = 'Serverlist';
 $nav['competition'] = 'Competition';
+$nav['faq'] = 'FAQ';
+
+$faq['title'] = 'FAQ';
 
 $stats['title'] = 'Stats';
 $stats['topgames'] = 'Top '.$stats_show_topgames.' Games';
