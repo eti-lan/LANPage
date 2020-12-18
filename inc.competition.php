@@ -10,27 +10,18 @@
  * Copyright (c) 2020, fly
  */
 ?>
-<script type="text/javascript" src="/competition/jquery-1.6.2.min.js"></script>
-<script type="text/javascript" src="/competition/jquery.json-2.2.min.js"></script>
-<script type="text/javascript" src="/competition/jquery.bracket.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/competition/jquery.bracket.mainpage.css" />
-<style type="text/css">
-.empty {
-  background-color: #FCC;
-}
-.invalid {
-  background-color: #FC6;
-}
-</style>
 <script type="text/javascript">
+jQuery.noConflict();
+var $j = jQuery;
+
 var singleEleminationData = { teams: [], results: [[]]};
 var doubleEleminationData = { teams: [], results: [[[[]]],[],[]]};
 
 function refreshSelect(pick) {
-  var select = $('#bracketSelect').empty()
-  $.getJSON('/competition/rest.php?op=list', function(data) {
+  var select = $j('#bracketSelect').empty()
+  $j.getJSON('/competition/rest.php?op=list', function(data) {
 
-    $.each(data, function(i, e) {
+    $j.each(data, function(i, e) {
       select.append('<option value="'+e+'">'+e+'</option>')
 	  select.change()
     })
@@ -51,25 +42,25 @@ function hash() {
   return bracket;
 }
 
-$(document).ready()
-$(document).ready(function() {
+$j(document).ready()
+$j(document).ready(function() {
     refreshSelect(hash())
 
-    $('#bracketSelect').change(function() {
-      var value = $(this).val()
+    $j('#bracketSelect').change(function() {
+      var value = $j(this).val()
       location.hash = '#!'+value
       if (!value) {
         newBracket()
         return
       }
-      $('#fields').empty()
+      $j('#fields').empty()
 
-      $.getJSON('/competition/rest.php?op=get&id='+value, function(data) {
-        $('#editor').empty().bracket({
+      $j.getJSON('/competition/rest.php?op=get&id='+value, function(data) {
+        $j('#editor').empty().bracket({
             init: data,
             save: function(data){
                 var json = jQuery.toJSON(data)
-                $.getJSON('/competition/rest.php?op=set&id='+value+'&data='+json)
+                $j.getJSON('/competition/rest.php?op=set&id='+value+'&data='+json)
               },
 			disableToolbar:true,
 			disableTeamEdit:true
@@ -79,9 +70,20 @@ $(document).ready(function() {
 	
   })
 </script>
-<h1 id="Competition">Competitions</h1>
-<p>Pick a Competition: <select id="bracketSelect"></select> <a href="/competition/edit.php">[Edit]</a></p>
-<div id="main">
-<div id="editor"></div>
-<div style="clear: both;" id="fields"></div>
-<pre></pre>
+			<div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10">
+                        <div class="page-header">
+                            <h1 id="<?php echo $nav['competition']; ?>"><?php echo $nav['competition']; ?></h1>
+                        </div>
+                    </div>
+					<div class="col-lg-10 col-md-10 competition">
+						<p>Pick a Competition: <select id="bracketSelect"></select> <a href="/competition/edit.php">[Edit]</a></p>
+						<div id="main">
+							<div id="editor"></div>
+							<div style="clear: both;" id="fields"></div>
+							<pre></pre>
+						</div>
+					</div>
+				</div>
+			</div>

@@ -73,7 +73,7 @@ include("inc.head.php");
 			?>
 
             <!-- Competition -->
-            <?php if ($enable_competition == true) { include("competition/competition.php"); }; ?>
+            <?php if ($enable_competition == true) { include("inc.competition.php"); }; ?>
 			
 			<!-- FAQ -->
             <?php if ($enable_faq == true) { include("inc.faq.php"); } ?>

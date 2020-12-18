@@ -1,7 +1,7 @@
 <?php
-/*ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);*/
+error_reporting(E_ALL);
 /**
  * jQuery Bracket server backend
  *
@@ -29,10 +29,10 @@ error_reporting(E_ALL);*/
 <html>
 <head>
 <title>Competitions</title>
-<script type="text/javascript" src="/competition/jquery-1.6.2.min.js"></script>
-<script type="text/javascript" src="/competition/jquery.json-2.2.min.js"></script>
-<script type="text/javascript" src="/competition/jquery.bracket.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/competition/jquery.bracket.min.css" />
+<script type="text/javascript" src="../assets/jquery.js"></script>
+<script type="text/javascript" src="../assets/jquery.json.js"></script>
+<script type="text/javascript" src="../assets/jquery.bracket.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../assets/jquery.bracket.min.css" />
 <style type="text/css">
 .empty {
   background-color: #FCC;
@@ -103,7 +103,7 @@ function hash() {
 $(document).ready(newBracket)
 $(document).ready(function() {
     newBracket()
-    $('input#bracketId').live('keyup', function() {
+    $('input#bracketId').on('keyup', function() {
       var input = $(this)
       var submit = $('input[value="Create"]')
       if (input.val().length === 0) {
@@ -121,7 +121,7 @@ $(document).ready(function() {
       }
     })
 
-    $('input[value="Create"]').live('click', function() {
+    $('input[value="Create"]').on('click', function() {
       $(this).attr('disabled', 'disabled')
       var input = $('input#bracketId')
       var bracketId = input.val()
@@ -133,7 +133,8 @@ $(document).ready(function() {
       var json = jQuery.toJSON(data)
       $.getJSON('/competition/rest.php?op=set&id='+bracketId+'&data='+json)
         .success(function() {
-          refreshSelect(bracketId)
+          refreshSelect(bracketId);
+		  $('pre').text("Bracket created: "+bracketId);
         })
     })
 
@@ -149,6 +150,7 @@ $(document).ready(function() {
       $('#fields').empty()
 
       $.getJSON('/competition/rest.php?op=get&id='+value, function(data) {
+		$('pre').text("Bracket loaded: "+value);
         $('#editor').empty().bracket({
             init: data,
             save: function(data){
@@ -164,7 +166,7 @@ $(document).ready(function() {
 	
 	$('#delete').click(function() {
 		var value = $('#bracketSelect').val();
-		//$('pre').text(jQuery.toJSON(value))
+		$('pre').text("Bracket deleted: "+value);
 		$.getJSON('/competition/rest.php?op=delete&id='+value+'&token=<?php echo($delete_token);?>').success(function() {
           refreshSelect(hash())
         })
@@ -180,5 +182,6 @@ $(document).ready(function() {
 <div style="clear: both;" id="fields"></div>
 <pre></pre>
 <div id="delete" style="color:red; background-color:DDD;display:inline;">[Delete this Competition]</div>
+<div><p><a href="../">Back to LanPage</a></p></div>
 </body>
 </html>

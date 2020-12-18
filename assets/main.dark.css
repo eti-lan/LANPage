@@ -6,6 +6,10 @@
 	max-width: 208px;
 }
 
+.progress {
+    background-color: #2a2a2a;
+}
+
 .table_morecondensed>tbody>tr>th, 
 .table_morecondensed>tfoot>tr>th, 
 .table_morecondensed>thead>tr>td, 

@@ -1,4 +1,12 @@
 /* jQuery Bracket | Copyright (c) Teijo Laine 2011-2018 | Licenced under the MIT licence */
+
+.empty {
+  background-color: #FCC;
+}
+.invalid {
+  background-color: #FC6;
+}
+
 div.jQBracket {
     font-family: Arial;
     font-size: 14px;
