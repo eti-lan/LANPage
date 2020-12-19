@@ -43,10 +43,10 @@ $args = array('op' => get('op'),
 $error = false;
 
 $restApi = array(
-  'get' => apiGet,
-  'set' => apiSet,
-  'list' => apiList,
-  'delete' => apiDelete
+  'get' => 'apiGet',
+  'set' => 'apiSet',
+  'list' => 'apiList',
+  'delete' => 'apiDelete'
 );
 
 if (!in_array($args['op'], array_keys($restApi))) {
