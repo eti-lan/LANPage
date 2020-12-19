@@ -59,16 +59,12 @@ include("inc.head.php");
 				echo "                        <div class=\"page-header\">\n";
 				echo "                            <h1 id=\"" . $nav['serverlist'] . "\"> " . $nav['serverlist'] . " </h1>\n";
 				echo "                        </div>\n";
-				echo "                        <div id=\"serverlist\">" . $servers['checking_server'] . "</div>\n";
-				echo "                        <script type=\"text/javascript\">\n";
-				echo "                            jQuery(document).ready(function() {\n";
-				echo "                                jQuery('#serverlist').load('inc.servers.php');\n";
-				echo "                            });\n";
-				echo "\n";
-				echo "                        </script>\n";
+				echo "                        <div id=\"serverlist\">";
+				include("inc.servers.php");
+				echo "						  </div>\n";
 				echo "                    </div>\n";
 				echo "                </div>\n";
-				echo "            </div>\n";
+				echo "</div>\n";
 			};
 			?>
 
