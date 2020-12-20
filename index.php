@@ -24,7 +24,7 @@ include("inc.head.php");
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="page-header">
-                            <h1 id="News"><?php echo($start['welcome']); ?>
+                            <h1 id="<?php echo $nav['home']; ?>"><?php echo($start['welcome']); ?>
                                 <?php if (isset($lan_title)) { echo "<small>" . $start['welcome2'] . " " . $lan_title . "</small>"; } ?>
                             </h1>
                         </div>

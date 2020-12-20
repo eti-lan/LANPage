@@ -10,7 +10,7 @@
           <li class="sidebar-brand">
               <a href="<?php $_SERVER['PHP_SELF']; ?>"><?php if (!isset($lan_title) & (!file_exists($logo))) { echo "LAN Homepage"; } elseif (file_exists($logo)) {;} else { echo $lan_title; } ?></a>
           <li>
-              <a href="<?php $_SERVER['PHP_SELF']; ?>#Home"><?php echo $nav['home']; ?> <span
+              <a href="<?php $_SERVER['PHP_SELF']; ?>#<?php echo $nav['home']; ?>"><?php echo $nav['home']; ?> <span
                       class="glyphicon glyphicon-asterisk"></span></a>
           </li>
           <li>
