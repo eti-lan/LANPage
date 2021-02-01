@@ -1,2 +1,4 @@
-order allow,deny
-deny from all
+Deny From All
+<FilesMatch "^index\.php$">
+Allow From All
+</FilesMatch>

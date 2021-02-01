@@ -2,7 +2,7 @@
                 <div class="row">
                     <div class="col-lg-10 col-md-10">
                         <div class="page-header">
-                            <h1 id="<?php echo $stats['title']; ?>"><?php echo $stats['title']; ?></h1>
+                            <h1 id="<?php echo $nav['stats']; ?>"><?php echo $stats['title']; ?></h1>
 							<h4 id="<?php echo $stats['topgames']; ?>"><?php echo $stats['topgames']; ?></h4>
                         </div>
                     </div>
@@ -14,14 +14,17 @@
 					$game_overview = $stats_db->query($game_overview_query);
 					?>
 
-                    <?php $top_game = $stats_db->querySingle('SELECT SUM(counter) FROM gamestats ORDER BY game_id'); ?>
+                    <?php $top_game = $stats_db->querySingle('SELECT SUM(counter) FROM gamestats ORDER BY game_id');
+					?>
+
 
                     <div class="col-lg-10 col-md-10 top-games">
-                        <?php while ($row = $game_overview->fetchArray()) { ?>
+                        <?php while ($row = $game_overview->fetchArray()) {
+							$percent = round(($row['SUM(counter)'] / $top_game * 100), 0); ?>
                         <?php echo '<div class="col col-md-3">
 							<div class="row"><div class="col-xs-3"><img style="width: 75px; border-radius: 4px; margin: 0px 10px 15px 0px;" src="assets/games/' . $row['game_id'] . '.jpg"></div>
-    						<div class="col-xs-8">
-      						<div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $row['SUM(counter)'] . '" aria-valuemin="0" aria-valuemax="' . $top_game . '" style="width:' . round(($row['SUM(counter)'] / $top_game * 100), 1) . '%">' . $row['SUM(counter)'] . '%</div></div>
+    						<div class="col-xs-8" style="padding-left:35px;">
+      						<div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $row['SUM(counter)'] . '" aria-valuemin="0" aria-valuemax="' . $top_game . '" style="width:'.$percent.'%; padding-left: 5px;">' . $percent . '%</div></div>
     						</div>
 							</div>
 							</div>'; ?>

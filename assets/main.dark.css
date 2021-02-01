@@ -1,0 +1,505 @@
+ body {
+    overflow-x: hidden;
+ }
+
+.logo {
+	max-width: 208px;
+}
+
+.progress {
+    background-color: #2a2a2a;
+}
+
+.table_morecondensed>tbody>tr>th, 
+.table_morecondensed>tfoot>tr>th, 
+.table_morecondensed>thead>tr>td, 
+.table_morecondensed>tbody>tr>td, 
+.table_morecondensed>tfoot>tr>td{ padding: 4px; }
+
+
+.top-games {
+	margin-bottom: 30px !important;
+}
+
+#stats tbody > tr > td {
+     vertical-align: middle;
+}
+
+
+#stats > thead > tr > th.col-xs-1 {
+	width: 105px !important;
+}
+
+.stats_game img {
+	width: 100%; 
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+}
+
+div.dataTables_wrapper div.dataTables_filter label {
+    font-weight: normal;
+    white-space: nowrap;
+    text-align: left;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 8px;
+    white-space: nowrap;
+}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+}
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap;
+}
+
+.pagination{
+    display:inline-block;
+    padding-left:0;
+    margin:20px 0;
+    border-radius:4px
+}
+.pagination>li{
+    display:inline
+}
+.pagination>li>a,.pagination>li>span{
+    position:relative;
+    float:left;
+    padding:6px 12px;
+    line-height:1.42857143;
+    text-decoration:none;
+    color:#f0ad4e;
+    background-color:#fff;
+    border:1px solid #ddd;
+    margin-left:-1px
+}
+.pagination>li:first-child>a,.pagination>li:first-child>span{
+    margin-left:0;
+    border-bottom-left-radius:4px;
+    border-top-left-radius:4px
+}
+.pagination>li:last-child>a,.pagination>li:last-child>span{
+    border-bottom-right-radius:4px;
+    border-top-right-radius:4px
+}
+.pagination>li>a:hover,.pagination>li>span:hover,.pagination>li>a:focus,.pagination>li>span:focus{
+    z-index:2;
+    color:#df8a13;
+    background-color:#eee;
+    border-color:#ddd
+}
+.pagination>.active>a,.pagination>.active>span,.pagination>.active>a:hover,.pagination>.active>span:hover,.pagination>.active>a:focus,.pagination>.active>span:focus{
+    z-index:3;
+    color:#fff;
+    background-color:#f0ad4e;
+    border-color:#f0ad4e;
+    cursor:default
+}
+.pagination>.disabled>span,.pagination>.disabled>span:hover,.pagination>.disabled>span:focus,.pagination>.disabled>a,.pagination>.disabled>a:hover,.pagination>.disabled>a:focus{
+    color:#777;
+    background-color:#fff;
+    border-color:#ddd;
+    cursor:not-allowed
+}
+.pagination-lg>li>a,.pagination-lg>li>span{
+    padding:10px 16px;
+    font-size:18px;
+    line-height:1.3333333
+}
+.pagination-lg>li:first-child>a,.pagination-lg>li:first-child>span{
+    border-bottom-left-radius:6px;
+    border-top-left-radius:6px
+}
+.pagination-lg>li:last-child>a,.pagination-lg>li:last-child>span{
+    border-bottom-right-radius:6px;
+    border-top-right-radius:6px
+}
+.pagination-sm>li>a,.pagination-sm>li>span{
+    padding:5px 10px;
+    font-size:12px;
+    line-height:1.5
+}
+.pagination-sm>li:first-child>a,.pagination-sm>li:first-child>span{
+    border-bottom-left-radius:3px;
+    border-top-left-radius:3px
+}
+.pagination-sm>li:last-child>a,.pagination-sm>li:last-child>span{
+    border-bottom-right-radius:3px;
+    border-top-right-radius:3px
+}
+
+#stats_paginate > ul {
+	color: #333;
+	background-color: #f0ad4e;
+	border-color: #eea236;
+}
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+	background-color: #000;
+	color: #DDD;
+}
+
+select {
+    text-transform: none;
+    background-color: #333;
+}
+
+.jumbotron {
+    padding: 10px;
+	color: black;
+}
+
+.jumbotron h1{
+    font-size: 21pt;
+}
+
+.jumbotron p{
+    font-size: 12pt;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #353535;
+}
+.table-striped > tbody > tr:hover {
+    background-color: #233925;
+}
+
+.table > tbody > tr > td.danger, .table > tbody > tr.danger > td {
+	background-color: #820505;
+}
+
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #EEE;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #000;
+    border: 0px solid #ccc;
+    border-radius: 4px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 75px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #f0ad4e;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+#sidebar-footer {
+    position: absolute;
+    bottom: 15px;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+	text-align: center;
+	color: #f0ad4e;
+}
+#sidebar-footer a {
+	color: #f0ad4e;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+
+div.jQBracket {
+  font-family: "Arial";
+  font-size: 14px;
+  float: left;
+  clear: both;
+  position: relative;
+  background-color: #333333;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222222), to(#333333));
+  background: -moz-linear-gradient(-90deg, #222222, #333333); }
+  div.jQBracket .tools {
+    position: absolute;
+    top: 0px;
+    color: white; }
+  div.jQBracket .tools span {
+    cursor: pointer;
+    margin: 5px;
+    display: block;
+    text-align: center;
+    width: 18px;
+    height: 18px;
+    background-color: #666666; }
+  div.jQBracket .tools span:hover {
+    background-color: #999999; }
+  div.jQBracket .finals {
+    float: right;
+    right: 0px;
+    clear: right;
+    position: relative; }
+  div.jQBracket .bracket {
+    float: right;
+    height: 400px;
+    clear: left; }
+  div.jQBracket .loserBracket {
+    float: right;
+    height: 200px;
+    clear: left;
+    position: relative; }
+  div.jQBracket .round {
+    position: relative;
+    width: 100px;
+    margin-right: 40px;
+    float: left; }
+  div.jQBracket .match {
+    position: relative;
+    float: left;
+    display: block;
+    width: 100%; }
+  div.jQBracket .team {
+    position: relative;
+    z-index: 1;
+    float: left;
+    background-color: #666666;
+    color: white;
+    width: 100px;
+    height: 16px;
+    border-radius: 5px;
+    margin: 1px 0px;
+    cursor: default;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); }
+    div.jQBracket .team b {
+      font-weight: normal;
+      padding-left: 3px;
+      cursor: pointer;
+      height: inherit;
+      position: absolute;
+      width: 70px; }
+      div.jQBracket .team b[disabled] {
+        cursor: default; }
+      div.jQBracket .team b input {
+        font-size: 10px;
+        padding: 0px;
+        width: 60px;
+        height: 16px;
+        position: absolute; }
+    div.jQBracket .team span {
+      font-weight: bold;
+      float: right;
+      cursor: pointer;
+      padding: 0px;
+      padding-right: 5px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 0px 3px 3px 0px;
+      text-align: right;
+      width: 20px; }
+      div.jQBracket .team span[disabled] {
+        color: #999999;
+        cursor: default; }
+      div.jQBracket .team span input {
+        font-size: 10px;
+        padding: 0px;
+        width: inherit;
+        height: 16px; }
+    div.jQBracket .team b input.error,
+    div.jQBracket .team span input.error {
+      background-color: #ffcccc; }
+    div.jQBracket .team.np {
+      background-color: #666666;
+      color: #eeeeee; }
+    div.jQBracket .team.na {
+      background-color: #999999;
+      color: #cccccc; }
+    div.jQBracket .team.win {
+      color: #eeeeee; }
+    div.jQBracket .team.win span {
+      color: #006600; }
+    div.jQBracket .team.lose span {
+      color: #990000; }
+    div.jQBracket .team.lose {
+      background-color: #666666;
+      color: #333333; }
+    div.jQBracket .team.tie span {
+      color: blue; }
+    div.jQBracket .team.highlight {
+      background-color: #33cc00;
+      color: black; }
+    div.jQBracket .team.highlightWinner {
+      background-color: #ddaa00;
+      color: black; }
+    div.jQBracket .team.highlightLoser {
+      background-color: #cccccc;
+      color: black; }
+  div.jQBracket .teamContainer {
+    position: relative;
+    float: left;
+    display: block; }
+  div.jQBracket .connector {
+    border: 2px solid #666666;
+    border-left: none;
+    position: absolute;
+    display: block;
+    z-index: 1; }
+    div.jQBracket .connector div.connector {
+      border: none;
+      border-bottom: 2px solid #666666;
+      height: 0px;
+      position: absolute;
+      display: block; }
+    div.jQBracket .connector.highlight,
+    div.jQBracket .connector div.connector.highlight {
+      border-color: #00cc00; }
+    div.jQBracket .connector.highlightWinner,
+    div.jQBracket .connector div.connector.highlightWinner {
+      border-color: #ddaa00; }
+    div.jQBracket .connector.highlightLoser,
+    div.jQBracket .connector div.connector.highlightLoser {
+      border-color: #cccccc; }
+  div.jQBracket .np .connector,
+  div.jQBracket .np .connector div.connector {
+    border-color: #222222; }
+  div.jQBracket .bubble {
+    display: block;
+    width: 30px;
+    right: -35px;
+    position: absolute;
+    background-color: #996633;
+    text-align: center;
+    font-size: 11px;
+    height: 16px;
+    color: #331100; }
+    div.jQBracket .bubble:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 3px;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid transparent; }
+    div.jQBracket .bubble:after {
+      left: -5px;
+      border-left: 0;
+      border-right: 6px solid #996633; }
+  div.jQBracket .highlightWinner .bubble {
+    background-color: #ddaa00;
+    color: #996600; }
+    div.jQBracket .highlightWinner .bubble:after {
+      border-right-color: #ddaa00; }
+  div.jQBracket .highlightLoser .bubble {
+    background-color: #cccccc;
+    color: #333333; }
+    div.jQBracket .highlightLoser .bubble:after {
+      border-right-color: #cccccc; }

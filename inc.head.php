@@ -7,6 +7,12 @@ if (file_exists(stream_resolve_include_path('config.php'))) {
 } else {
     die;
 }
+
+if($show_errors == true){
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+}
 ?>
 
 <?php
@@ -20,9 +26,9 @@ if ($lang == "german") {
 <!DOCTYPE html>
 <?php
 if ($lang == "german") {
-    echo '<html lang="en">';
-} else {
     echo '<html lang="de">';
+} else {
+    echo '<html lang="en">';
 }
 ?>
 
@@ -35,16 +41,18 @@ if ($lang == "german") {
     <meta name="description" content="end of the internet">
     <meta name="author" content="eti">
     <title><?php echo $lan_title; ?></title>
-    <link href="assets/bootstrap.css" rel="stylesheet">
-    <link href="assets/main.css" rel="stylesheet">
     <!---- <script src="assets/prototype.js"></script> -->
     <script src="assets/jquery.js"></script>
-    <script src="assets/jquery.ui.js"></script>
+    <script src="assets/jquery-ui.min.js"></script>
     <script src="assets/jquery.json.js"></script>
-    <script src="assets/jquery.bracket.js"></script>
+    <script src="assets/jquery.bracket.min.js"></script>
     <script src="assets/jquery.datatables.js"></script>
     <script src="assets/bootstrap.js"></script>
     <script src="assets/bootstrap.datatables.js"></script>
+	<link href="assets/bootstrap.css" rel="stylesheet">
+    <link href="assets/<?php echo($csstheme); ?>" rel="stylesheet">
+	<link href="assets/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/jquery.bracket.mainpage.css" rel="stylesheet" type="text/css" />
 	
     <?php if ($enable_stats == true) {
 		echo ('<script src="assets/stats.js"></script>');
