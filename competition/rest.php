@@ -11,8 +11,16 @@
  */
  
  // get $competition_edit_password
- include_once("../config.php");
+if (file_exists(stream_resolve_include_path('../config.php'))) {
+	include_once('../config.php');
+} else if (file_exists(stream_resolve_include_path('../config.sample.php'))) {
+	include_once('../config.sample.php');
+} else {
+	die;
+}
 
+/** 
+ * incompatible with PHP 7.x
 if (get_magic_quotes_gpc()) {
   $process = array(&$_GET, &$_POST, &$_COOKIE, &$_REQUEST);
   while (list($key, $val) = each($process)) {
@@ -28,6 +36,7 @@ if (get_magic_quotes_gpc()) {
   }
   unset($process);
 }
+ */
 
 define('VALID_PATTERN', '[0-9A-Za-z_]+');
 define('PATH', './data/');

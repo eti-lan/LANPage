@@ -41,18 +41,15 @@ if ($lang == "german") {
     <meta name="description" content="end of the internet">
     <meta name="author" content="eti">
     <title><?php echo $lan_title; ?></title>
-    <!---- <script src="assets/prototype.js"></script> -->
     <script src="assets/jquery.js"></script>
-    <script src="assets/jquery-ui.min.js"></script>
     <script src="assets/jquery.json.js"></script>
-    <script src="assets/jquery.bracket.min.js"></script>
+    <script src="assets/jquery.bracket.js"></script>
     <script src="assets/jquery.datatables.js"></script>
     <script src="assets/bootstrap.js"></script>
     <script src="assets/bootstrap.datatables.js"></script>
 	<link href="assets/bootstrap.css" rel="stylesheet">
-    <link href="assets/<?php echo($csstheme); ?>" rel="stylesheet">
-	<link href="assets/jquery-ui.min.css" rel="stylesheet" type="text/css" />
-	<link href="assets/jquery.bracket.mainpage.css" rel="stylesheet" type="text/css" />
+	<link href="assets/main.css" rel="stylesheet">
+    <link href="assets/custom.css" rel="stylesheet">
 	
     <?php if ($enable_stats == true) {
 		echo ('<script src="assets/stats.js"></script>');

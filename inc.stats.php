@@ -32,10 +32,10 @@
                     </div>
 
                     <div class="col-lg-10 col-md-10">
-					                        <div class="page-header">
-						<h4 id="<?php $stats['players']; ?>"><?php echo $lan_title .' '. $stats['players']; ?></h4>
+						<div class="page-header">
+							<h4 id="<?php $stats['players']; ?>"><?php echo $lan_title .' '. $stats['players']; ?></h4>
 						 </div>
-                        <table id="stats" class="table table-striped table-bordered table_morecondensed" cellspacing="0">
+							<table id="stats" class="table table-striped table-bordered table_morecondensed" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th><?php echo $stats['player']; ?></th>
@@ -52,7 +52,7 @@
                             <tbody>
 
 							<?php while ($row = $player_overview->fetchArray()) {
-									if ($row['timestamp'] >= strtotime(date('Y-m-d H:i:s', strtotime("-" . $stats_expire . " hours")))) { ?>
+								if ($row['timestamp'] >= strtotime(date('Y-m-d H:i:s', strtotime("-" . $stats_expire . " hours")))) { ?>
                                 <tr>
                                     <td><?php echo $row['player_name']; ?></td>
                                     <td><?php echo $row['hostname']; ?></td>

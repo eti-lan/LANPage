@@ -1,0 +1,12 @@
+<faq>
+  <question>
+	<lang>de</lang>
+    <title>Wie komme ich auf einen Raft Server?</title>
+    <answer>Im Hauptmenu Shift + Tab, Host auswählen, Rechtsklick und beitreten</answer>
+  </question>
+  <question>
+	<lang>en</lang>
+    <title>How do I get on a Raft gameserver?</title>
+    <answer>In the main menu Shift + Tab, select host, right click and join</answer>
+  </question>  
+</faq>

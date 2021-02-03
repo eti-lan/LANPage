@@ -16,21 +16,20 @@
 
 /* Main configuration */
 $lan_title = 'LAN Party';
-$lang = 'english';
+$lang = 'german';
 
 $logo = "./logo.png";
-
-$csstheme = "main.css"; // default
-//$csstheme = "main.dark.css"; // dark theme
 
 $enable_chat = false; /* not yet implemented */
 $enable_stats = true;
 $enable_downloads = true;
 $enable_serverlist = true;
+
 $enable_competition = true; /* be sure that the webserver user has write access to the folder /competition/data */
-$competition_edit_password = "eti";
+$competition_edit_password = "lan";
+
 $enable_faq = true; /* insert questions directly into the database for now */
-$database_UI_password = "etidb"; /* open /db in Browser for Database Web-UI */
+
 
 /* Show the top X of all games */
 $stats_show_topgames = 12;

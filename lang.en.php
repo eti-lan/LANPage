@@ -47,4 +47,7 @@ $chat['send_message'] = 'Send message';
 $chat['send'] = 'Send';
 $chat['emoticons'] = 'Emoticons';
 $chat['color'] = 'Choose color';
+
+$competition['pick'] = 'Pick a competition: ';
+$competition['edit'] = 'Edit';
 ?>

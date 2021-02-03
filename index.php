@@ -6,12 +6,11 @@
  * @author   eti and various anonymous
  *
  * things required:
- * Webserver and PHP5 or newer with SQLite extension enabled
+ * Webserver and PHP7 or newer with SQLite extension enabled
  */
 
 include("inc.head.php");
 ?>
-
 
 <body>
     <div id="wrapper">
@@ -60,7 +59,7 @@ include("inc.head.php");
 				echo "                            <h1 id=\"" . $nav['serverlist'] . "\"> " . $nav['serverlist'] . " </h1>\n";
 				echo "                        </div>\n";
 				echo "                        <div id=\"serverlist\">";
-				include("inc.servers.php");
+				require("inc.servers.php");
 				echo "						  </div>\n";
 				echo "                    </div>\n";
 				echo "                </div>\n";
@@ -75,6 +74,16 @@ include("inc.head.php");
             <?php if ($enable_faq == true) { include("inc.faq.php"); } ?>
 
         </div>
+		
+		<footer>
+			<div class="col-lg-10">
+				<div class="row">
+					<hr>
+					<p class="pull-right">&copy; 2021 eti Team</p>
+				</div>
+			</div>
+		</footer>
+		
+	 </div>
 </body>
-
 </html>

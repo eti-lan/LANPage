@@ -47,4 +47,7 @@ $chat['send_message'] = 'Nachricht senden';
 $chat['send'] = 'Senden';
 $chat['emoticons'] = 'Emoticons';
 $chat['color'] = 'Farbe wählen';
+
+$competition['pick'] = 'Turnier wählen: ';
+$competition['edit'] = 'Bearbeiten';
 ?>
