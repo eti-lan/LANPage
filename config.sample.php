@@ -16,7 +16,7 @@
 
 /* Main configuration */
 $lan_title = 'LAN Party';
-$lang = 'german';
+$lang = 'english';
 
 $logo = "./logo.png";
 

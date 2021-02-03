@@ -15,7 +15,7 @@ It should be possible to personalize the page for each event. In addition to the
 * Various statistic features via the LAN Launcher
 
 ## Things required:
-* Webserver and PHP5 or newer
+* Webserver and PHP7 or newer
 * PHP SQLite, mbstring and XML extension enabled
 
 ## Installation:
