@@ -20,12 +20,16 @@
 
                     <div class="col-lg-10 col-md-10 top-games">
                         <?php while ($row = $game_overview->fetchArray()) {
-							$percent = round(($row['SUM(counter)'] / $top_game * 100), 0); ?>
+							$percent = round(($row['SUM(counter)'] / $top_game * 100), 0); 
+							$game_title = $game_db->querySingle('SELECT game_title FROM games WHERE game_id = "'.($row['game_id']).'"');
+							?>
                         <?php echo '<div class="col col-md-3">
 							<div class="row"><div class="col-xs-3"><img style="width: 75px; border-radius: 4px; margin: 0px 10px 15px 0px;" src="assets/games/' . $row['game_id'] . '.jpg"></div>
     						<div class="col-xs-8" style="padding-left:35px;">
-      						<div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $row['SUM(counter)'] . '" aria-valuemin="0" aria-valuemax="' . $top_game . '" style="width:'.$percent.'%; padding-left: 5px;">' . $percent . '%</div></div>
+      						<div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="' . $row['SUM(counter)'] . '" aria-valuemin="0" aria-valuemax="' . $top_game . '" style="width:'.$percent.'%; padding-left: 5px;">' . $percent . '%</div>
     						</div>
+							<p class="stats_game_title">'. $game_title .'</p>
+							</div>
 							</div>
 							</div>'; ?>
                         <?php } ?>

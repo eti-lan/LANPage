@@ -10,6 +10,10 @@
 	margin-bottom: 30px !important;
 }
 
+.progress {
+	background-color: #ddd;
+}
+
 #stats tbody > tr > td {
      vertical-align: middle;
 }
@@ -23,6 +27,14 @@
 	width: 100%; 
 }
 
+.stats_game_title {
+	margin-top: -17px;
+	color: #333;
+	width: 160px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; 
+}
 
 /* Bootstrap panels */
 

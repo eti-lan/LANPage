@@ -1,9 +1,16 @@
 <lan_servers>
 <server>
     <name>This webserver</name>
-    <game>-</game>
+    <game></game>
     <ip>lan</ip>
 	<port>80</port>
+    <admin>LAN Team</admin>
+</server>
+<server>
+    <name>Wreckfest Server</name>
+    <game>wreckfest</game>
+    <ip>wreckfest.lan</ip>
+	<port>27015</port>
     <admin>LAN Team</admin>
 </server>
 </lan_servers>
