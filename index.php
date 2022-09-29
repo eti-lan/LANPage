@@ -34,7 +34,7 @@ include("inc.head.php");
                             </h1>
 
                             <p><?php echo($start['iptext']); ?>
-                                <?php if (isset($lan_title)) { echo $lan_title; } ?><?php echo($start['iptext2']); ?>
+                                <?php if (isset($lan_title)) { echo $lan_title; } ?> <?php echo($start['iptext2']); ?>
                             </p>
                         </div>
                     </div>
