@@ -2,7 +2,7 @@
 $start['welcome'] = 'Willkommen';
 $start['welcome2'] = 'zur';
 $start['iptext'] = 'ist deine persönliche IP-Adresse. Diese bleibt während der gesamten';
-$start['iptext2'] = ' identisch.';
+$start['iptext2'] = 'identisch.';
 
 $nav['home'] = 'Home';
 $nav['chat'] = 'Chat';

@@ -59,14 +59,4 @@
 
         </tbody>
     </table>
-</div>rs['online'].'</td></tr>';
-					} else {
-						print '<td class="danger">'.$servers['offline'].'</td></tr>';
-					}
-				}
-			}
-			?>
-
-        </tbody>
-    </table>
 </div>
