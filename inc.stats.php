@@ -48,6 +48,7 @@
                                     <th><?php echo $stats['board_manufacturer']; ?></th>
                                     <th><?php echo $stats['baseboard']; ?></th>
                                     <th><?php echo $stats['cpu']; ?></th>
+									<th><?php echo $stats['gpu']; ?></th>
                                     <th><?php echo $stats['os']; ?></th>
                                     <th class="col-xs-1"><?php echo $stats['last_game']; ?></th>
                                     <th><?php echo $stats['status']; ?></th>
@@ -64,6 +65,7 @@
                                     <td><?php echo $row['board_manufacturer']; ?></td>
                                     <td><?php echo $row['baseboard']; ?></td>
                                     <td><?php echo $row['cpu']; ?></td>
+									<td><?php echo $row['gpu']; ?></td>
                                     <td><?php echo $row['windows_edition']; ?></td>
                                     <td class="stats_game" id="<?php echo $row['current_game']; ?>"><?php if (!empty($row['current_game'])) {
 																												echo '<img class="stats_game" src="assets/games/' . $row['current_game'] . '.jpg">';

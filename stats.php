@@ -12,6 +12,7 @@
 	$system_product_name = mb_convert_encoding($_GET["system_product_name"], 'UTF-8', 'ISO-8859-15');
 	$bios_release = mb_convert_encoding($_GET["bios_release"], 'UTF-8', 'ISO-8859-15');	
 	$cpu = mb_convert_encoding($_GET["cpu"], 'UTF-8', 'ISO-8859-15');	
+	$gpu = mb_convert_encoding($_GET["gpu"], 'UTF-8', 'ISO-8859-15');	
 	$windows_edition = mb_convert_encoding($_GET["windows_edition"], 'UTF-8', 'ISO-8859-15');
 	$player_name = mb_convert_encoding($_GET["player_name"], 'UTF-8', 'ISO-8859-15');		
 	$current_game = mb_convert_encoding($_GET["current_game"], 'UTF-8', 'ISO-8859-15');
@@ -28,7 +29,7 @@
 	if ($result['macaddr1'] == $macaddr1) {
 
 	// Update if entry exists
-	$query = "UPDATE assets set hostname='$hostname', macaddr1='$macaddr1', macaddr2='$macaddr2', ipv4addr='$ipv4addr', board_manufacturer='$board_manufacturer', baseboard='$baseboard', system_product_name='$system_product_name', bios_release='$bios_release', cpu='$cpu', windows_edition='$windows_edition', player_name='$player_name', current_game='$current_game', timestamp='$timestamp' WHERE macaddr1='$macaddr1'";
+	$query = "UPDATE assets set hostname='$hostname', macaddr1='$macaddr1', macaddr2='$macaddr2', ipv4addr='$ipv4addr', board_manufacturer='$board_manufacturer', baseboard='$baseboard', system_product_name='$system_product_name', bios_release='$bios_release', cpu='$cpu', gpu='$gpu', windows_edition='$windows_edition', player_name='$player_name', current_game='$current_game', timestamp='$timestamp' WHERE macaddr1='$macaddr1'";
 
 	if( $stats_db->exec($query) ){
 		$message = "ok";
@@ -59,7 +60,7 @@
 	
 	else {
 	// Create new PC
-	$query = "INSERT INTO assets (hostname, macaddr1, macaddr2, ipv4addr, board_manufacturer, baseboard, system_product_name, bios_release, cpu, windows_edition, player_name, current_game, timestamp) VALUES ('$hostname', '$macaddr1', '$macaddr2', '$ipv4addr', '$board_manufacturer', '$baseboard', '$system_product_name', '$bios_release', '$cpu', '$windows_edition', '$player_name', '$current_game', '$timestamp')";
+	$query = "INSERT INTO assets (hostname, macaddr1, macaddr2, ipv4addr, board_manufacturer, baseboard, system_product_name, bios_release, cpu, gpu, windows_edition, player_name, current_game, timestamp) VALUES ('$hostname', '$macaddr1', '$macaddr2', '$ipv4addr', '$board_manufacturer', '$baseboard', '$system_product_name', '$bios_release', '$cpu', '$gpu', '$windows_edition', '$player_name', '$current_game', '$timestamp')";
 
 	if( $stats_db->exec($query) ){
 		$message = "ok";

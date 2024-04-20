@@ -22,6 +22,7 @@ $stats['ip'] = 'IP-Adresse';
 $stats['board_manufacturer'] = 'Hersteller';
 $stats['baseboard'] = 'Mainboard';		
 $stats['cpu'] = 'CPU';
+$stats['gpu'] = 'GPU';
 $stats['os'] = 'Betriebssystem';
 $stats['last_game'] = 'Letztes Spiel';
 $stats['status'] = 'Online';
