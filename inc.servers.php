@@ -1,62 +1,47 @@
 <div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-                <th><?php echo $servers['name']; ?></th>
-                <th><?php echo $servers['game']; ?></th>
-                <th><?php echo $servers['ip']; ?></th>
-                <th><?php echo $servers['port']; ?></th>
-                <th><?php echo $servers['admin']; ?></th>
-                <th><?php echo $servers['status']; ?></th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <?php
-			$server = "";
-			if (file_exists('servers.xml')) {
-				$sXml = file_get_contents('servers.xml');
-			} else if (file_exists('servers.sample.xml')) {
-				$sXml = file_get_contents('servers.sample.xml');
-			} else {
+	<table class="table">
+		<thead>
+			<tr>
+				<?php 
+				$headers = ['name', 'game', 'ip', 'port', 'admin', 'status'];
+				foreach ($headers as $header): ?>
+					<th><?php echo htmlspecialchars($servers[$header]); ?></th>
+				<?php endforeach; ?>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+			$serverFile = file_exists('servers.xml') ? 'servers.xml' : (file_exists('servers.sample.xml') ? 'servers.sample.xml' : null);
+			if (!$serverFile) {
 				die;
 			}
 
-			// parse XML  
+			$sXml = file_get_contents($serverFile);
 			$oXML = simplexml_load_string($sXml);
 			if (!$oXML) {
-				die($servers['error']);
+				die(htmlspecialchars($servers['error']));
 			}
 
 			foreach ($oXML->server as $server) {
-				foreach ($server->name as $name) {
-					print '<tr><td>' . (string) $name . '</td>';
+				$serverData = [
+					'name' => (string) $server->name,
+					'game' => (string) $server->game,
+					'ip' => (string) $server->ip,
+					'port' => (string) $server->port,
+					'admin' => (string) $server->admin,
+				];
+
+				echo '<tr>';
+				foreach ($serverData as $data) {
+					echo '<td>' . htmlspecialchars($data) . '</td>';
 				}
-				foreach ($server->game as $game) {
-					print '<td>' . (string) $game . '</td>';
-				}
-				foreach ($server->ip as $ip) {
-					print '<td>' . (string) $ip . '</td>';
-				}
-				foreach ($server->port as $port) {
-					print '<td>' . (string) $port . '</td>';
-				}
-				foreach ($server->admin as $admin) {
-					print '<td>' . (string) $admin . '</td>';
-				}
-				foreach ($server->ip as $ip) {
-					$timeout = 1;
-					$port = (string) $oXML->server->port;
-					error_reporting(0);
-					if (fsockopen($ip, $port, $errno, $errstr, 1)) {
-						print '<td class="success">'.$servers['online'].'</td></tr>';
-					} else {
-						print '<td class="danger">'.$servers['offline'].'</td></tr>';
-					}
-				}
+
+				$timeout = 1;
+				$status = @fsockopen($serverData['ip'], $serverData['port'], $errno, $errstr, $timeout) ? 'online' : 'offline';
+				echo '<td class="' . ($status === 'online' ? 'success' : 'danger') . '">' . htmlspecialchars($servers[$status]) . '</td>';
+				echo '</tr>';
 			}
 			?>
-
-        </tbody>
-    </table>
+		</tbody>
+	</table>
 </div>
