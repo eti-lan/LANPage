@@ -16,7 +16,7 @@
 
 /* Main configuration */
 $lan_title = 'LAN Party';
-$lang = 'english';
+$lang = 'german';
 
 $logo = "./logo.png";
 
@@ -28,6 +28,8 @@ $enable_serverlist = true;
 $enable_competition = true; /* be sure that the webserver user has write access to the folder /competition/data */
 $competition_edit_password = "lan";
 
+$enable_order = true; /* be sure that the webserver user has write access to the folder /order/ */
+$order_admin_password = "lanfood";																						  
 $enable_faq = true; /* insert questions directly into the database for now */
 
 
