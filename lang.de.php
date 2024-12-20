@@ -10,7 +10,7 @@ $nav['stats'] = 'Statistiken';
 $nav['downloads'] = 'Downloads';
 $nav['serverlist'] = 'Serverübersicht';
 $nav['competition'] = 'Turniere';
-$nav['order'] = 'Catering';
+$nav['catering'] = 'Catering';
 $nav['faq'] = 'FAQ';
 
 $faq['title'] = 'FAQ';

@@ -38,9 +38,8 @@
         } ?>
           </li>
 		  <li>
-              <?php if ($enable_order == true) {
-	      echo '<a href="' . $_SERVER['PHP_SELF'] . '#'.$nav['order'].'">'.$nav['order'].'<span class="glyphicon glyphicon-cutlery"></span></a>';
-          //echo '<a href="order/">'.$nav['order'].'<span class="glyphicon glyphicon-cutlery"></span></a>';
+              <?php if ($enable_catering == true) {
+	      echo '<a href="' . $_SERVER['PHP_SELF'] . '#'.$nav['catering'].'">'.$nav['catering'].'<span class="glyphicon glyphicon-cutlery"></span></a>';
         } ?>
           </li>
 		  <li>

@@ -1,0 +1,15 @@
+Deny from all
+<FilesMatch "\.php$">
+    Allow from all
+</FilesMatch>
+<FilesMatch "\.css$">
+    Allow from all
+</FilesMatch>
+<FilesMatch "\.mp3$">
+    Allow from all
+</FilesMatch>
+<Files "">
+    Allow from all
+</Files>
+DirectorySlash On
+DirectoryIndex index.php

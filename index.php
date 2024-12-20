@@ -70,8 +70,8 @@ include("inc.head.php");
             <!-- Competition -->
             <?php if ($enable_competition == true) { include("inc.competition.php"); }; ?>
 			
-			<!-- Order -->
-            <?php if ($enable_order == true) { include("inc.order.php"); }; ?>
+			<!-- Catering -->
+            <?php if ($enable_catering == true) { include("inc.catering.php"); }; ?>
 			
 			<!-- FAQ -->
             <?php if ($enable_faq == true) { include("inc.faq.php"); } ?>
