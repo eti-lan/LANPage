@@ -180,6 +180,9 @@ $results = $stmt->execute();
 			status_new: '<?= htmlspecialchars($catering['status_new']) ?>',
     		status_processing: '<?= htmlspecialchars($catering['status_processing']) ?>',
     		status_completed: '<?= htmlspecialchars($catering['status_completed']) ?>',
+			'size_normal': '<?= htmlspecialchars($catering['size_normal']) ?>',
+			'size_small': '<?= htmlspecialchars($catering['size_small']) ?>',
+			'size_big': '<?= htmlspecialchars($catering['size_big']) ?>',
 			totalSummary: '<?= htmlspecialchars($catering['total_summary']) ?>',
 			orders: '<?= htmlspecialchars($catering['orders']) ?>'
 		};
@@ -247,7 +250,7 @@ $results = $stmt->execute();
 									${escapeHtml(order.flyer_number)}
 									${order.quantity > 1 ? `(${order.quantity}${translations.quantityTimes})` : ''}
 								</td>
-								<td>${escapeHtml(order.size)}</td>
+								<td>${translations['size_' + order.size]}</td>
 								<td>
 									${formatPrice(order.price)} ${translations.currency}
 									${order.quantity > 1 ? `<br><small>${translations.totalSum}: ${formatPrice(orderTotal)} ${translations.currency}</small>` : ''}
