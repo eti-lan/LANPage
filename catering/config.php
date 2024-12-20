@@ -19,22 +19,12 @@ if (file_exists(stream_resolve_include_path('../config.php'))) {
 if ($lang == "german") {
 	if (file_exists(stream_resolve_include_path('../lang.de.php'))) {
 		include_once('../lang.de.php');
-	} else {
-
-		/* load default settings */
-		
-        $nav['catering'] = "Catering";
 	}
     require('lang.de.php');
 } else {
 	if (file_exists(stream_resolve_include_path('../lang.en.php'))) {
 		include_once('../lang.en.php');
-	} else {
-
-		/* load default settings */
-		
-        $nav['catering'] = "Catering";
-	}
+	} 
     require('lang.en.php');
 }
 

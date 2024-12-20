@@ -26,12 +26,16 @@ $results = $stmt->execute();
 <body>
 			<div class="container-fluid">
                 <div class="row">
+					<?php
+					if(!isset($nav['catering'])):
+					?>
 					<!-- Überschrift über die gesamte Breite -->
                     <div class="col-12">
                         <div class="page-header">
                             <h1 id="<?php echo $nav['catering']; ?>"><?= htmlspecialchars($nav['catering']) ?></h1>
                         </div>
                     </div>
+					<?php endif; ?>
 					<!-- Nachrichtenbereich über die gesamte Breite -->
 					<div class="col-12">
 						<div id="message" class="mt-3" style="display: none;"></div>
