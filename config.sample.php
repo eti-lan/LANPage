@@ -28,6 +28,10 @@ $enable_serverlist = true;
 $enable_competition = true; /* be sure that the webserver user has write access to the folder /competition/data */
 $competition_edit_password = "lan";
 
+$enable_catering = true; /* be sure that the webserver user has write access to the folder /order/ */
+$catering_admin_password = "lanfood";
+$timezone="Europe/Berlin"; /* change to your local timezone so that the Database Entrys get the correct local Timestamps */
+																						  
 $enable_faq = true; /* insert questions directly into the database for now */
 
 

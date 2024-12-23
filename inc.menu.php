@@ -38,6 +38,11 @@
         } ?>
           </li>
 		  <li>
+              <?php if ($enable_catering == true) {
+	      echo '<a href="' . $_SERVER['PHP_SELF'] . '#'.$nav['catering'].'">'.$nav['catering'].'<span class="glyphicon glyphicon-cutlery"></span></a>';
+        } ?>
+          </li>
+		  <li>
               <?php if ($enable_faq == true) {
           echo '<a href="' . $_SERVER['PHP_SELF'] . '#'.$nav['faq'].'">'.$nav['faq'].'<span class="glyphicon glyphicon-question-sign"></span></a>';
         } ?>

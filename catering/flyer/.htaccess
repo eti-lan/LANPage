@@ -1,0 +1,4 @@
+Deny from all
+<FilesMatch "\.pdf$">
+    Allow from all
+</FilesMatch>

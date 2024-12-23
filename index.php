@@ -70,6 +70,9 @@ include("inc.head.php");
             <!-- Competition -->
             <?php if ($enable_competition == true) { include("inc.competition.php"); }; ?>
 			
+			<!-- Catering -->
+            <?php if ($enable_catering == true) { include("inc.catering.php"); }; ?>
+			
 			<!-- FAQ -->
             <?php if ($enable_faq == true) { include("inc.faq.php"); } ?>
 
@@ -79,7 +82,7 @@ include("inc.head.php");
 			<div class="col-lg-10">
 				<div class="row">
 					<hr>
-					<p class="pull-right">&copy; 2021 eti Team</p>
+					<p class="pull-right">&copy; 2024 eti Team</p>
 				</div>
 			</div>
 		</footer>
