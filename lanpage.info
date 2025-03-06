@@ -1,8 +1,7 @@
 #!/bin/sh
 root_usage=`df -h / | awk '/\// {print $(NF-1)}'`
 memory_usage=`free -m | awk '/Mem/ { printf("%3.1f%%", $3/$2*100) }'`
-ip_address=`ip -4 addr | grep -E 'eth|ens' | grep -oP '(?<=inet\s)\d+(\.\d+){3}'`
-ip_address=`hostname -I`
+ip_address=$(ip -4 addr show scope global | awk '/inet/ {print $2}' | cut -d/ -f1)
 
 c1=`tput setaf 1`
 c2=`tput setaf 1`

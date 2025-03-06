@@ -70,6 +70,18 @@ start() {
     status_message "Synchronizing LANPage..."
     curl -u $user:$pass "$eti_call&dir=$sync_dir/eti_lanpage&$syncoptions"
     update_progress
+	
+	rsync -avz --progress \
+    --exclude='logo.png' \
+    --exclude='logo.jpg' \
+    --exclude='*.db' \
+    --exclude='config.php' \
+    --exclude='launcher.*' \
+    --exclude='*.ini' \
+    --exclude='*.xml' \
+    "$sync_dir/eti_lanpage/" "$HTML_DIR/"
+    
+	update_progress
 
     if [ -f $sync_dir/lanpage.service ]; then
         status_message "Updating LANPage Service..."
