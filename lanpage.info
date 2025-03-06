@@ -1,0 +1,51 @@
+#!/bin/sh
+root_usage=`df -h / | awk '/\// {print $(NF-1)}'`
+memory_usage=`free -m | awk '/Mem/ { printf("%3.1f%%", $3/$2*100) }'`
+ip_address=`ip -4 addr | grep -E 'eth|ens' | grep -oP '(?<=inet\s)\d+(\.\d+){3}'`
+ip_address=`hostname -I`
+
+c1=`tput setaf 1`
+c2=`tput setaf 1`
+c3=`tput setaf 7`
+c4=`tput setaf 3`
+c5=`tput bold`
+
+printf "\n" >> /etc/issue
+echo "${c4}${c5}                            tttt            iiii    " > /etc/issue
+echo "${c4}${c5}                          ttt:::t           i::::i  " >> /etc/issue
+echo "${c4}${c5}                          t:::::t            iiii   " >> /etc/issue
+echo "${c4}${c5}                          t:::::t                   " >> /etc/issue
+echo "${c4}${c5}    eeeeeeeeeeee    ttttttt:::::ttttttt    iiiiiii  " >> /etc/issue
+echo "${c4}${c5}  ee::::::::::::ee  t:::::::::::::::::t    i:::::i  " >> /etc/issue
+echo "${c4}${c5} e::::::eeeee:::::eet:::::::::::::::::t     i::::i  " >> /etc/issue
+echo "${c4}${c5}e::::::e     e:::::etttttt:::::::tttttt     i::::i  " >> /etc/issue
+echo "${c4}${c5}e:::::::eeeee::::::e      t:::::t           i::::i  " >> /etc/issue
+echo "${c4}${c5}e:::::::::::::::::e       t:::::t           i::::i  " >> /etc/issue
+echo "${c4}${c5}e::::::eeeeeeeeeee        t:::::t           i::::i  " >> /etc/issue
+echo "${c4}${c5}e:::::::e                 t:::::t    tttttt i::::i  " >> /etc/issue
+echo "${c4}${c5}e::::::::e                t::::::tttt:::::ti::::::i " >> /etc/issue
+echo "${c4}${c5} e::::::::eeeeeeee        tt::::::::::::::ti::::::i " >> /etc/issue
+echo "${c4}${c5}  ee:::::::::::::e          tt:::::::::::tti::::::i " >> /etc/issue
+echo "${c4}${c5}    eeeeeeeeeeeeee            ttttttttttt  iiiiiiii " >> /etc/issue
+
+printf "\n" >> /etc/issue
+printf "\n" >> /etc/issue
+
+echo "${c4}${c5}    LANPage Webserver VM                          (v.20241222)" >> /etc/issue
+
+printf "\n" >> /etc/issue
+printf "\n" >> /etc/issue
+
+echo "${c3}    SSH access:                                     ${c2}$ip_address:22" >> /etc/issue
+printf "\n" >> /etc/issue
+echo "${c3}    Sync management interface:                      ${c2}http://$ip_address:8888" >> /etc/issue
+printf "\n" >> /etc/issue
+echo "${c3}    Server Control:				    ${c2}lanpage or /etc/init.d/lanpage" >> /etc/issue
+printf "\n" >> /etc/issue
+echo "${c3}    Start/Stop service:                             ${c2}eti start/stop" >> /etc/issue
+printf "\n" >> /etc/issue
+printf "\n" >> /etc/issue
+printf "\n" >> /etc/issue
+
+cp /etc/issue /etc/motd
+

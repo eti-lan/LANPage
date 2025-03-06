@@ -1,0 +1,123 @@
+#!/bin/sh
+
+# =========================================
+# eti LANPage Service
+# Date: 22.12.2024
+# Purpose: Start, stop, and restart LANPage services with enhanced status display and color formatting
+# =========================================
+
+### BEGIN INIT INFO
+# Provides:          eti LANPage
+# Required-Start:    $remote_fs $syslog $named $network $time
+# Required-Stop:     $remote_fs $syslog $named $network
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: eti LANPage Webserver
+# Description:       Synchronizes LANPage website via BTSync/Resilio Sync
+### END INIT INFO
+
+RUNAS=root
+
+# ANSI color codes
+C="\033[38;5;214m"     # Orange
+BOLD="\033[1m"         # Bold
+NC="\033[0m"           # Reset colors and formatting
+
+# Progress bar variables
+TOTAL_STEPS=5
+CURRENT_STEP=0
+
+# Function: Display status with colors
+status_message() {
+    printf "%b\n" "${C}${1}${NC}"
+}
+
+# Function: Display progress bar
+progress_bar() {
+    local terminal_width=$(tput cols)
+    local bar_width=$((terminal_width - 10)) # Leave space for percentage and brackets
+    local percentage=$((CURRENT_STEP * 100 / TOTAL_STEPS))
+    local completed=$((percentage * bar_width / 100))
+    local remaining=$((bar_width - completed))
+
+    printf "%b[%-${bar_width}s] %3d%%%b\n" "${C}" "$(printf '#%.0s' $(seq 1 $completed))" "$percentage" "${NC}"
+}
+
+# Function: Update progress
+update_progress() {
+    CURRENT_STEP=$((CURRENT_STEP + 1))
+    if [ "$CURRENT_STEP" -gt "$TOTAL_STEPS" ]; then
+        CURRENT_STEP=$TOTAL_STEPS
+    fi
+    progress_bar
+    printf "\n"
+}
+
+start() {
+    printf "\n"
+    status_message "Starting LANPage services..."
+    progress_bar
+
+    . /root/eti-config.conf
+    alias lanpage='/etc/init.d/lanpage'
+
+    status_message "Starting Resilio Sync..."
+    service resilio-sync start
+    service apache2 start
+    sleep 5
+    update_progress
+
+    status_message "Synchronizing LANPage..."
+    curl -u $user:$pass "$eti_call&dir=$sync_dir/eti_lanpage&$syncoptions"
+    update_progress
+
+    if [ -f $sync_dir/lanpage.service ]; then
+        status_message "Updating LANPage Service..."
+        cp $sync_dir/lanpage.service /etc/init.d/lanpage
+        status_message "Updating Sync VM Info..."
+        cp $sync_dir/lanpage.info /etc/rc.local
+    fi
+    update_progress
+
+    status_message "LANPage services started."
+    printf "\n"
+}
+
+stop() {
+    printf "\n"
+    status_message "Stopping LANPage services..."
+    progress_bar
+
+    . /root/eti-config.conf
+
+    status_message "Stopping Resilio Sync..."
+    curl --silent --output /dev/null -u $user:$pass "$exit_call"
+    sleep 2
+    service resilio-sync stop
+    service apache2 stop
+    update_progress
+
+    status_message "LANPage services stopped."
+    printf "\n"
+}
+
+restart() {
+    CURRENT_STEP=0
+    stop
+    start
+}
+
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  restart)
+    restart
+    ;;
+  *)
+    status_message "Usage: lanpage {start|stop|restart}"
+    ;;
+esac

@@ -79,7 +79,7 @@ include("inc.head.php");
 			<div class="col-lg-10">
 				<div class="row">
 					<hr>
-					<p class="pull-right">&copy; 2021 eti Team</p>
+					<p class="pull-right">&copy; <?php echo date("Y"); ?> eti Team</p>
 				</div>
 			</div>
 		</footer>
