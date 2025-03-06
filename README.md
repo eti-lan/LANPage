@@ -19,10 +19,13 @@ It should be possible to personalize the page for each event. In addition to the
 * PHP SQLite, mbstring and XML extension enabled
 
 ## Installation:
+- Use our automated installer:
+  <code>wget -q https://www.eti-lan.xyz/lanpage.sh && sh lanpage.sh</code> (recommended) or clone the git repository
 - Copy or rename config.sample.php to config.php and change values
 - chown the files to match your webserver/php configured user
 - chmod 0755 db/*.db
 - See the *.sample.xml files and modify them to match your needs
+- See https://www.eti-lan.xyz/#customize for more information about integration and the launcher.ini and launcher.css files
 
 ## Screenshots:
 
