@@ -11,7 +11,7 @@
                                 <h3>LAN Launcher</h3>
                                 <img style="max-height:100px; padding-bottom:10px;" src="assets/lan_launcher.png" />
                                 <p><?php echo $downloads['launcher_text']; ?></p>
-                                <p><a href="dl/launcher-setup.exe" class="btn btn-warning"
+                                <p><a href="dl/launcher-setup.msi" class="btn btn-warning"
                                         role="button"><?php echo $downloads['download']; ?></a></p>
                             </div>
                         </div>
