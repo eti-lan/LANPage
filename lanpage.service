@@ -71,7 +71,7 @@ start() {
     curl -u $user:$pass "$eti_call&dir=$sync_dir/eti_lanpage&$syncoptions"
     update_progress
 	
-	rsync -avz --progress \
+	rsync -avz --progress --no-delete \
     --exclude='logo.png' \
     --exclude='logo.jpg' \
     --exclude='*.db' \
@@ -79,7 +79,7 @@ start() {
     --exclude='launcher.*' \
     --exclude='*.ini' \
     --exclude='*.xml' \
-    "$sync_dir/eti_lanpage/" "$HTML_DIR/"
+    "$sync_dir/eti_lanpage/" "/var/www/html/"
     
 	update_progress
 
