@@ -41,14 +41,14 @@ include("inc.head.php");
                 </div>
             </div>
 
+            <!-- Downloads -->
+            <?php if ($enable_downloads == true) { include("inc.dl.php"); } ?>
+			
             <!-- Chat -->
             <?php if ($enable_chat == true) { include("chat/chat.php"); } ?>
 
             <!-- Stats -->
             <?php if ($enable_stats == true) { include("inc.stats.php"); } ?>
-
-            <!-- Downloads -->
-            <?php if ($enable_downloads == true) { include("inc.dl.php"); } ?>
 
             <!-- Servers -->
             <?php if ($enable_serverlist == true) { 

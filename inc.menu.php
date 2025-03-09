@@ -18,13 +18,13 @@
         } ?>
           </li>
           <li>
-              <?php if ($enable_stats == true) {
-          echo '<a href="' . $_SERVER['PHP_SELF'] . '#'.$nav['stats'].'">'.$nav['stats'].'<span class="glyphicon glyphicon-stats"></span></a>';
-        } ?>
-          </li>
-          <li>
               <?php if ($enable_downloads == true) {
           echo '<a href="' . $_SERVER['PHP_SELF'] . '#'.$nav['downloads'].'">'.$nav['downloads'].'<span class="glyphicon glyphicon-circle-arrow-down"></span></a>';
+        } ?>
+          </li>		  
+          <li>
+              <?php if ($enable_stats == true) {
+          echo '<a href="' . $_SERVER['PHP_SELF'] . '#'.$nav['stats'].'">'.$nav['stats'].'<span class="glyphicon glyphicon-stats"></span></a>';
         } ?>
           </li>
           <li>

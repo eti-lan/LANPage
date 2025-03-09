@@ -28,10 +28,11 @@ $stats['last_game'] = 'Last game';
 $stats['status'] = 'Online';
 $stats['players'] = 'Participants';
 
-$downloads['title'] = 'Downloads';
+$downloads['title'] = 'Downloads & Links';
 $downloads['launcher_text'] = 'The P2P LAN Game-manager';
 $downloads['download'] = 'Download';
 $downloads['error'] = 'Downloads XML file format not valid or PHP-XML module missing.';
+$downloads['click'] = 'Open';
 
 $servers['checking_server'] = 'Checking servers...';
 $servers['name'] = 'Name';
