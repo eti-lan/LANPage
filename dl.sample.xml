@@ -1,8 +1,20 @@
 <downloads>
+    <download type="link">
+    <name>Food order</name>
+    <file>https://docs.google.com/forms/...</file>
+    <image>assets/icons/eat.png</image>
+    <version>07:00 pm</version>
+  </download>
+  <download type="link">
+    <name>Tournament registration</name>
+    <file>https://docs.google.com/forms/...</file>
+    <image>assets/icons/trophy.png</image>
+    <version>10:00 pm</version>
+  </download>
   <download>
     <name>Teamspeak 3</name>
     <file>https://files.teamspeak-services.com/releases/client/3.3.2/TeamSpeak3-Client-win64-3.3.2.exe</file>
-    <image>dl/ts3.jpg</image>
+    <image>assets/icons/ts3.jpg</image>
     <version>Teamspeak 3 Client (64 Bit)</version>
-  </download>
+  </download>  
 </downloads>
